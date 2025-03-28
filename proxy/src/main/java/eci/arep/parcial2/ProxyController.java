@@ -39,10 +39,10 @@ public class ProxyController {
     public ResponseEntity<?> binarySearchHandler(@RequestParam("list") String list, @RequestParam("value") String value) throws IOException {
         String ans = "";
         if(aux % 2 == 0){
-            ans = HTTPConection(System.getenv("ms1") + "/linearsearch?list=" + list + "&value=" + value);
+            ans = HTTPConection(System.getenv("ms1") + "/binarysearch?list=" + list + "&value=" + value);
             //ans = HTTPConection("http://ec2-54-211-10-177.compute-1.amazonaws.com:8080" + "/binarysearch?list=" + list + "&value=" + value);
         } else{
-            ans = HTTPConection(System.getenv("ms2") + "/linearsearch?list=" + list + "&value=" + value);
+            ans = HTTPConection(System.getenv("ms2") + "/binarysearch?list=" + list + "&value=" + value);
             //ans = HTTPConection("http://ec2-18-233-166-218.compute-1.amazonaws.com:8080" + "/binarysearch?list=" + list + "&value=" + value);
         }
         aux += 1;
